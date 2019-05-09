@@ -16,14 +16,9 @@ const db = knex({
   });
 
 
-  
-
-
-
-
-
+ 
 const app = express()
-app.use(morgan('short'))
+app.use(morgan('short' ))
 
 
 app.get("/", (req, res) => {
@@ -39,6 +34,6 @@ app.get("/users", (req, res) => {
     // res.send("Nodemon auto updates when I save this file")
 })
 
-app.listen(3000, () => {
-    console.log('Server is up and listening to 3000...')
-})
+
+const PORT = process.env.PORT || 8000;
+app.listen(PORT)

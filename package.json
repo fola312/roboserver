@@ -2,9 +2,10 @@
   "name": "roboserver",
   "version": "1.0.0",
   "description": "demo-api",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
