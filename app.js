@@ -35,5 +35,8 @@ app.get("/users", (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT)
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
