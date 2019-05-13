@@ -2,18 +2,18 @@ const express = require ('express');
 const morgan = require('morgan');
 const knex = require('knex');
 
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//       host : '127.0.0.1',
-//       user: "postgres",
-//       password: "test",
-//       id : '',
-//       name : '',
-//       email : '',
-//       database : 'robots'
-//     }
-//   });
+const db = knex({
+    client: 'pg',
+    connection: {
+      host : 'postgres://adoplqaewkoxbx:a599136b9b7ea88af2d60b9b833db005c8dfb498d30fa34d849351761559354b@ec2-174-129-240-67.compute-1.amazonaws.com:5432/d7qbl21744src0',
+      user: "postgres",
+      password: "test",
+      id : '',
+      name : '',
+      email : '',
+      database : 'robots'
+    }
+  });
 
 const { Client } = require('pg');
 
@@ -51,8 +51,7 @@ app.get("/users", (req, res) => {
 })
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+app.listen(process.env.PORT || 3000, function () {
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env)
+});
+
